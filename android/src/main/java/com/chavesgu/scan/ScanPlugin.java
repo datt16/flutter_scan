@@ -61,7 +61,17 @@ public class ScanPlugin implements FlutterPlugin, MethodCallHandler, ActivityAwa
                     flutterPluginBinding.getBinaryMessenger(),
                     flutterPluginBinding.getApplicationContext(),
                     activity,
-                    binding
+                    binding,
+                    true
+            ));
+
+    flutterPluginBinding.getPlatformViewRegistry()
+            .registerViewFactory("chavesgu/scan_view", new ScanViewFactory(
+                    flutterPluginBinding.getBinaryMessenger(),
+                    flutterPluginBinding.getApplicationContext(),
+                    activity,
+                    binding,
+                    false
             ));
   }
 
